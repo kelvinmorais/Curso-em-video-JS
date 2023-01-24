@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalide</title>
+</head>
+<body>
+    <h1>Verificação de Nacionalidade</h1>
+    Indique sua Nacionalidade: <input type="text" name="txtpais" id="txtpais">
+    <input type="Button" value="Verificar" id="button">
+    <div id="res"></div>
+
+    <script>
+        var button = window.document.querySelector('input#button')
+        button.addEventListener('click', clicar)
+       
+
+        function clicar(){
+            var pais =  window.document.querySelector('input#txtpais')
+            var pais2 = String(pais.value)
+            var res = window.document.querySelector('div#res')
+
+            if(pais2 != 'Brasil'){
+                res.innerHTML = `<p>O país que você escreveu foi <strong>${pais2}</strong>, portanto você é Estrangeiro!</p>`
+                
+            }else{
+                res.innerHTML = `<p>O país que você escreveu foi <strong>${pais2}</strong>, portanto você é Brasileiro!</p>`
+            }
+
+            
+            res.innerHTML += '<p>Obrigado!</p>'
+        }
+
+   
+
+    </script>
+</body>
+</html>

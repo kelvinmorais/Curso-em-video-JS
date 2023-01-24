@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+            body{
+                background-color: rgb(145, 145, 235);
+                color: white;
+                font: normal 18pt ubuntu;
+            }
+            h1{
+                color:rgb(255, 255, 255)
+            }
+    </style>
+    <title>Curso J 5</title>
+</head>
+<body>
+    <h1>iniciando estudos DOM</h1>
+    <p class="abc">Aqui vai o resulado</p>
+    <p name="p">Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+    <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[1]
+        var d = window.document.getElementById('msg')
+        var a = window.document.getElementsByName('p')[0]
+        var ab = window.document.querySelector('div#msg')
+        var abc = window.document.querySelector('p.abc')
+        var abc = window.document.querySelector('p.abc')
+
+        corpo.style.background = 'black' //vai mudar a cor do Background
+        p1.style.color = 'blue' //vai mudar a cor de p1 na ordem acima
+        ab.style.background = 'green'
+        abc.innerText = 'Estou aguardando...' //vai mudar o texto original 
+        a.innerText = 'Testando'    
+        
+        /*
+        window.document.write('Está escrito assim: ' + p1.innerText) //innerText =  apresenta texto que está dentro do parágrafo
+        window.document.write('Está escrito assim: ' + p1.innerHTML) //innerText =  apresenta texto que está dentro do parágrafo + a configuração de stylo do HTML
+        */
+        //window.alert(p1.innerText) //mostra alerta com o texto 
+        //window.document.getElementById('msg').innerText = 'Olá!' //Muda o Texto Original, porém não precisa carregar uma váriavel
+        
+    </script>
+</body>
+</html>

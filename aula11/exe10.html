@@ -9,6 +9,24 @@
 <body>
     <h1>Sistema de Multas</h1>
     velocidade do carro: <input type="number" name="txtvel" id="txtvel"> <Km>
-    <input type="button" value="Verificar">
+    <input type="button" value="Verificar" id="button" >
+    <div id="res"></div>
+    <script>
+        var txtb = window.document.querySelector('input#button') //conecta via DOM no elemento input pelo id button
+        txtb.addEventListener('click', calcular) //monitora o evento click na váriavel txtb
+        
+        function calcular(){
+            var txtv = window.document.querySelector('input#txtvel') //conecta via DOM no elemento input pelo id txtvel
+            var vel = Number(txtv.value) //transforma o valor capturado pela variavel txtv em númerico
+
+            var txtr = window.document.querySelector('div#res') //conecta via DOM no elemento div pelo id res
+
+            txtr.innerHTML = `<p>Sua Velocidade atual é de <strong>${vel} Km/h</strong></p>`
+            if (vel > 60){ //se velocidade maior que 60km
+                txtr.innerHTML += '<p>Você foi <strong>Multado!</strong></p>'
+            }
+            txtr.innerHTML += '<p>Dirija sempre com cinto de segurança!</p>' //+= para concatenar os textos
+        }
+    </script>
 </body>
 </html>

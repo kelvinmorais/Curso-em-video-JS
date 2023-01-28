@@ -79,12 +79,15 @@ function carregar(){
     if (hora >=6 && hora <=12){
         //Bom dia!
         img.src = 'img/cafe400px.png'
+        window.document.body.style.background = '#FAFAFA'
     } else if(hora >12 && hora <=18){
        //Bom Dia!
         img.src = 'img/almoço2400px.png'
+        window.document.body.style.background = '#A89C96'
     } else {
         //Boa Noite!
         img.src = 'img/Hamburguer3400px.png'
+        window.document.body.style.background = '#C26306'
     }
     
     

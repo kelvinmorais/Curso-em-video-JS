@@ -1,5 +1,3 @@
-var msg = window.document.querySelector('div#msg')
-var img = window.document.querySelector('img#img')
 
 //function carregar(){
    // window.document.write("teste")
@@ -8,7 +6,12 @@ var img = window.document.querySelector('img#img')
 
 ///*
 function carregar(){
-    
+  
+    var msg1 = window.document.querySelector('div#msg1')
+    var msg2 = window.document.querySelector('div#msg2')
+    var msg3 = window.document.querySelector('div#msg3')
+    var img = window.document.querySelector('img#img')
+
     var diapc = new Date()
     var mespc = new Date()
     var anopc = new Date()
@@ -24,73 +27,53 @@ function carregar(){
     var hora = horapc.getHours()
     var min = minpc.getMinutes()
     var seg = segpc.getSeconds()
-    
-    switch (mes){
-        case 0: "Janeiro"
-            break
-        case 1: "Fevereiro"
-            break
-        case 2: "Marcço"
-            break
-        case 3: "Abril"
-            break
-        case 4: "Maio"
-            break
-        case 5: "Junho"
-            break
-        case 6: "Julho"
-            break
-        case 7: "Agosto"
-            break
-        case 8: "Setembro"
-            break
-        case 9: "Outubro"
-            break
-        case 10: "Novembro"
-            break
-        case 11: "Dezembro"
-            break 
-        default: "[ERRO] Dia da Semana incorreto"
-            break
-    }
+    var diasemn = ""
 
     switch (diasem){
-        case 0: "Domingo"
+        case 0: 
+            diasemn = "Domingo"
             break
-        case 1: "Terça - Feira"
+        case 1: 
+            diasemn = "Segunda - Feira"
             break
-        case 2: "Terça - Feira"
+        case 2: 
+            diasemn = "Terça - Feira"
             break
-        case 3: "Quarta - Feira"
+        case 3: 
+            diasemn = "Quarta - Feira"
             break
-        case 4: "Quinta - Feira"
+        case 4: 
+            diasemn = "Quinta - Feira"
             break
-        case 5: "Sexta - Feira"
+        case 5: 
+            diasemn = "Sexta - Feira"
             break
-        case 6: "Sabádo"
+        case 6: 
+            diasemn = "Sabádo"
             break
-        default: "[ERRO] Dia da Semana incorreto"
+        default: 
+            diasemn = "[ERRO] Dia da Semana incorreto"
             break
     }
-    
-    
-    msg.innerHTML = ` ${diasem} ${dia}  ${mes} ${ano} ${hora} ${min} ${seg}`
+  
     
     if (hora >=6 && hora <=12){
         //Bom dia!
         img.src = 'img/cafe400px.png'
         window.document.body.style.background = '#FAFAFA'
+        msg3.innerHTML = "Bom dia, tenha um bom café!"
     } else if(hora >12 && hora <=18){
        //Bom Dia!
         img.src = 'img/almoço2400px.png'
         window.document.body.style.background = '#A89C96'
+        msg3.innerHTML = "Boa tarde, tenha um bom almoço!"
     } else {
         //Boa Noite!
         img.src = 'img/Hamburguer3400px.png'
         window.document.body.style.background = '#C26306'
+        msg3.innerHTML = "Boa noite, tenha uma boa janta!"
     }
     
-    
+    msg1.innerHTML = ` ${diasemn} - ${dia}/${mes+1}/${ano}`
+    msg2.innerHTML =  `${hora}:${min}:${seg}`
 }  //*/
-
-
